@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Алгоритм Ахо-Корасик</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">Алгоритм Ахо-Корасик</a>
+</nav>
+
+<div class="container my-3">
+    <form id="form">
+        <div class="row">
+            <div class="col-4">
+                <h3>Паттерны</h3>
+                <div class="patterns"></div>
+                <button type="button" class="btn btn-primary js-add-pattern">Добавить паттерн</button>
+            </div>
+            <div class="col-4">
+                <h3>Строка для поиска</h3>
+                <textarea id="text" class="form-control mb-2" name="string" rows="6" required></textarea>
+                <button type="submit" class="btn btn-primary js-add-pattern">Поиск</button>
+            </div>
+            <div class="col-4">
+                <h3>Результат</h3>
+                <div class="alert alert-info" role="alert" id="alert">
+                    Здесь появятся данные после ввода текста
+                </div>
+                <div class="alert alert-warning d-none" role="alert" id="alertFail">
+                    Совпадений не найдено
+                </div>
+                <ul class="list-group" id="list">
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+
+<template id="pattern">
+    <div class="form-row mb-2">
+        <div class="col">
+            <input type="text" class="pattern form-control" name="pattern" required>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-outline-danger js-remove-pattern">X</button>
+        </div>
+    </div>
+</template>
+
+<template id="item">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span class="word"></span>
+        <span class="badge badge-primary badge-pill"></span>
+    </li>
+</template>
+
+<script src="AhoCorasick.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
